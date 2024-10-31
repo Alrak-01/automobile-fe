@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Sales</title>
+    <link rel="stylesheet" href="output.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .line::before,
+        .line::after,
+        .line2::before,
+        .line2::after {
+          content: '';
+          position: absolute;
+          width: 48.3%;
+          height: 1px;
+        }
+      
+        .line::before {
+            top: 9px;
+            left: 0;
+        }
+      
+        .line::after {
+            top: 9px;
+            right: 0;
+        }
+
+        .line2::before {
+            bottom: 9px;
+            left: 0;
+        }
+      
+        .line2::after {
+            bottom: 9px;
+            right: 0;
+        }
+      </style>
+      
+</head>
+<body class="bg-[#ffffff]"> 
+    <div class="wrapper">
+        <!-- HEADER FOR EXTRA LARGE SCREEN STARTS-->
+        <header class="hidden xl:flex lg:hidden bg-[#242931] h-auto px-20 py-5 justify-between items-center shadow-md">
+            <div class="logo">
+                <img src="assets/img/img1.png" alt="Company logo">
+            </div>
+            <menu class="flex">
+                <ul class="flex items-center">
+                    <li class="px-5 font-bold text-[10px] text-gray-400 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#">HOME</a></li>
+                    <li class="px-5 font-bold text-[11px] text-gray-400 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#">ABOUT US</a></li>
+                    <li class="px-5 font-bold text-[11px] text-gray-400 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#">INVENTORY</a></li>
+                    <li class="px-5 font-bold text-[11px] text-gray-400 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#">DEALERS</a></li>
+                    <li class="px-5 font-bold text-[11px] text-gray-400 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#">COMPARE</a></li>
+                    <li class="px-5 font-bold text-[11px] text-gray-400 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#">PAGES</a></li>
+                    <li class="px-5 font-bold text-[11px] text-gray-400 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#">NEWS</a></li>
+                    <li class="px-5 font-bold text-[11px] text-gray-400 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#">SHOP</a></li>
+                    </ul>
+                    <div class="other">
+                        <ul class="flex items-center">
+                            <li class="px-5 text-[11px] text-gray-400"><a href="#"><i class="fa-solid fa-user"></i> KAISER <i class="fa-solid fa-chevron-down"></i></a></li>
+                            <li class="text-[11px] h-7 w-[7.6vw] bg-red-800 flex text-gray-200 font-bold justify-center items-center rounded shadow-md"><a href="#"><i class="fa-solid fa-plus"></i> SELL CAR</a></li>
+                        </ul>
+                    </div>
+            </menu>
+        </header>
+        <!-- HEADER FOR EXTRA LARGE SCREEN ENDS-->
+
+
+        <!-- HEADER FOR LARGE SCREEN STARTS -->
+        <header class="hidden lg:flex xl:hidden bg-[#242931] h-auto px-20 py-5 shadow-md">
+            <menu class="block ml-6">
+                <div class="flex items-center justify-center">
+                    <div class="mr-5 logo">
+                        <img src="assets/img/img1.png" alt="Company logo">
+                    </div>
+                    <ul class="flex items-center">
+                        <li class="px-5 font-bold text-[10px] text-gray-400 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#">HOME</a></li>
+                        <li class="px-5 font-bold text-[11px] text-gray-400 hover:text-white whitespace-nowrap" style="transition: 0.3s ease-in-out;"><a href="#">ABOUT US</a></li>
+                        <li class="px-5 font-bold text-[11px] text-gray-400 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#">INVENTORY</a></li>
+                        <li class="px-5 font-bold text-[11px] text-gray-400 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#">DEALERS</a></li>
+                        <li class="px-5 font-bold text-[11px] text-gray-400 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#">COMPARE</a></li>
+                        <li class="px-5 font-bold text-[11px] text-gray-400 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#">PAGES</a></li>
+                        <li class="px-5 font-bold text-[11px] text-gray-400 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#">NEWS</a></li>
+                        <li class="px-5 font-bold text-[11px] text-gray-400 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#">SHOP</a></li>
+                        </ul>
+                </div>
+                <div class="flex items-center justify-start mt-8">
+                    <div class="text-transparent"><p>kkkkkkkkkkkkkkkkkkkkk</p></div>
+                    <div class="other">
+                        <ul class="flex items-center">
+                            <li class="px-5 text-[11px] text-gray-400"><a href="#"><i class="fa-solid fa-user"></i> KAISER <i class="fa-solid fa-chevron-down"></i></a></li>
+                            <li class="text-[11px] h-7 w-[7.6vw] bg-red-800 flex text-gray-200 font-bold justify-center items-center rounded shadow-md"><a href="#"><i class="fa-solid fa-plus"></i> SELL CAR</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </menu>
+        </header>
+        <!-- HEADER FOR LARGE SCREEN ENDS -->
+
+        <!-- HEADER FOR MEDIUM SCREEN AND BELOW STARTS-->
+        <header class="lg:hidden visible bg-[#242931] h-auto px-20 py-5 shadow-md">
+            <div class="logo flex items-center justify-center">
+                <img src="assets/img/img1.png" alt="Company logo">
+            </div>
+            <div class="others flex justify-between items-center">
+                <a href="#" class="text-white px-5 py-1 border border-gray-700 text-[15px] font-semibold uppercase flex items-center">Menu <i class="fa-solid fa-bars pl-2 text-[20px]"></i></a>
+                <div class="other">
+                    <ul class="flex items-center">
+                        <li class="px-5 text-[11px] text-gray-400"><a href="#"><i class="fa-solid fa-user"></i> KAISER <i class="fa-solid fa-chevron-down"></i></a></li>
+                        <li class="text-[11px] h-7 w-[9vw] whitespace-nowrap bg-red-800 flex text-gray-200 font-bold justify-center items-center rounded shadow-md"><a href="#"><i class="fa-solid fa-plus"></i> SELL CAR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <menu class="w-full pt-3 hidden">
+                <ul class="w-full">
+                    <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-3 flex justify-between items-center">Home</a></li>
+                    <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-3 flex justify-between items-center">About Us</a></li>
+                    
+                    <li>
+                        <a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-3 flex justify-between items-center">Inventory
+                            <i class="fa-solid fa-greater-than text-[9px]"></i> 
+                            <i class="fa-solid fa-angle-down text-[9px] hidden"></i> 
+                        </a>
+                            <menu class="submenu px-2 hidden">
+                                <ul>
+                                    <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">Grid Style</a></li>
+                                    <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">Classic Style</a></li>
+                                    <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">Detail page</a></li>
+                                </ul>
+                            </menu>
+                        </li>
+
+                    <li>
+                        <a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-3 flex justify-between items-center">Dealer
+                            <i class="fa-solid fa-greater-than text-[9px]"></i> 
+                            <i class="fa-solid fa-angle-down text-[9px] hidden"></i>
+                        </a>
+                         <menu class="submenu px-2 hidden">
+                            <ul>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">List View</a></li>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">Detail page</a></li>
+                            </ul>
+                        </menu>
+                        </li>
+
+                    <li>
+                        <a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-3 flex justify-between items-center">Compare
+                            <i class="fa-solid fa-greater-than text-[9px]"></i> 
+                            <i class="fa-solid fa-angle-down text-[9px] hidden"></i>
+                        </a>
+                         <menu class="submenu px-3 hidden">
+                            <ul>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">Listing</a></li>
+                            </ul>
+                        </menu>
+                        </li>
+
+                    <li>
+                        <a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-3 flex justify-between items-center">Pages
+                            <i class="fa-solid fa-greater-than text-[9px]"></i> 
+                            <i class="fa-solid fa-angle-down text-[9px] hidden"></i> 
+                        </a>
+                         <menu class="submenu px-2 hidden">
+                            <ul>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">Our Service</a></li>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">Post a Vehicle</a></li>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">listing packages</a></li>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">FAQ's & Help</a></li>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">listing packages</a></li>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">404 page</a></li>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">Search Result</a></li>
+                            </ul>
+                        </menu>
+                        </li>
+
+                    <li>
+                        <a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-3 flex justify-between items-center">News
+                            <i class="fa-solid fa-greater-than text-[9px]"></i> 
+                            <i class="fa-solid fa-angle-down text-[9px] hidden"></i> 
+                        </a>
+                         <menu class="submenu px-2 hidden">
+                            <ul>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">Large View</a></li>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">Medium View</a></li>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">Grid View</a></li>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">Detail View</a></li>
+                            </ul>
+                        </menu>
+                        </li>
+
+                    <li>
+                       <div class="main flex justify-between">
+                        <a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-3 flex justify-between items-center w-full">Shop 
+                            <i class="fa-solid fa-greater-than text-[9px]"></i> 
+                            <i class="fa-solid fa-angle-down text-[9px] hidden"></i>
+                        </a> 
+                       </div>
+                        <menu class="submenu px-2 hidden">
+                            <ul>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">Products</a></li>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">Detail View</a></li>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">cart</a></li>
+                                <li><a href="#" class="mb-1 text-white text-[12px] font-semibold border border-gray-700 p-2 flex justify-between items-center w-full">Checkout</a></li>
+                            </ul>
+                        </menu>
+                    </li>
+
+                    </ul>
+            </menu>
+        </header>
+        <!-- HEADER FOR MEDIUM SCREEN AND BELOW ENDS-->
+
+
+        <div class="bg-cover bg-center bg-no-repeat h-auto w-[100%] sm:hidden md:block" style="background-image: url(assets/img/img4.jpg);">
+            <div class="bg-black bg-opacity-50 h-auto lg:h-screen grid lg:flex justify-center items-center">
+                <div class="px-10 w-[100%] lg:w-[50%] mt-20">
+                    <img class="rounded h-[75vh] lg:h-auto w-[100%] lg:w-[90%]" style="object-fit: contain;" src="assets/img/img2.png" alt="car image">
+                </div>
+                <div class="w-[100%] lg:w-[50%]">
+                    <h3 class="flex h-10 xl:w-[12vw] w-[16vw] whitespace-nowrap text-sm bg-red-800 text-gray-200 items-center justify-center mx-20 lg:mx-0">More refined interior</h3>
+                    <!-- TEXT FOR LARGE  AND ABOVE STARTS-->
+                    <h1 class="text-[#ffffff] text-[50px] font-bold lg:block hidden">SAY HELLO TO NEW <span class="block">KIND OF YUM</span> <span class="block">DRIVING PLEASURE.</span></h1>
+                    <!-- TEXT FOR LARGE  AND ABOVE ENDS-->
+
+                    <!-- TEXT FOR MEDIUM SCREEN AND BELOW STARTS -->
+                    <h1 class="text-[#ffffff] text-[48px] mx-20 font-semibold lg:hidden block">SAY HELLO TO NEW KIND OF YUM DRIVING PLEASURE.</h1>
+                    <!-- TEXT FOR MEDIUM SCREEN AND BELOW ENDS -->
+                    <div class="flex pb-16 lg:pb-0">
+                        <a href="#" class="block text-center text-gray-200 h-[80px] w-[80px] font-bold py-4 bg-red-800  rounded-full ml-20 lg:ml-0">Starts From</a>
+                        <h1 class="text-[50px] text-gray-200 font-bold "><sup>$</sup>55,897</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-[#242931] block lg:flex px-5 items-center">
+            <div class="relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-2 top-9 lg:top-4 text-gray-500 text-sm"></i>
+                <input type="search" placeholder="Search by Keyword" class="w-full lg:w-[35vw] h-[45px] outline-none mt-6 lg:mt-0 p-5 px-8 mr-2">
+            </div>
+            <div class="flex w-full mt-3 lg:mt-0  lg:items-center">
+                <select class="p-2 mr-2 bg-white border border-gray-300 outline-none h-[45px] w-[20vw]  lg:w-[14vw] text-gray-500">
+                  <option value="">Select Make</option>
+                  <option value="">Alfa Roma</option>
+                  <option value="">Alphi</option>
+                  <option value="">Camry</option>
+                  <option value="">Benz</option>
+                </select>
+              
+                <select class="p-2 mr-2 bg-white border border-gray-300 outline-none h-[45px] w-[20vw] lg:w-[14vw] text-gray-500">
+                  <option value="">Select Type</option>
+                  <option value="">Motors</option>
+                  <option value="">Cars</option>
+                  <option value="">Ride</option>
+                </select>
+              
+                <div class="p-2 mr-2 bg-white border border-gray-300 outline-none h-[45px] w-[20vw] lg:w-[14vw] text-gray-500 relative">
+                <i class="fa-solid fa-location-crosshairs absolute right-2 top-4 text-sm"></i>
+                <input type="text" placeholder="Location" class="border-none bg-transparent outline-none pt-1 " autocomplete="off">
+                </div>
+
+                <div class="flex flex-col lg:justify-center items-center h-[18vh] relative">
+                    <button class="bg-red-800 h-[45px] lg:w-20 w-56"><i class="fa-solid fa-magnifying-glass text-gray-200"></i></button>
+                    <a href="#" class="text-[9px] text-gray-200 absolute lg:bottom-2 bottom-7 font-semibold">ADVANCE SEARCH</a>
+                </div>
+              </div>
+        </div>
+
+        <div class="h-auto lg:h-screen pt-20 xl:pt-0 pb-20 block lg:flex justify-center items-center">
+            <div class="w-full flex lg:block items-center justify-center lg:w-[48%]">
+                <img src="assets/img/img5.jpg" alt="car image" class="">
+            </div>
+            <div class="w-full px-[9vw] lg:px-0 lg:w-[39%]">
+                <h4 class="text-red-600 font-semibold mb-4">ADAPTIVE DRIVE HEAD UP DISPLAY</h4>
+                <h2 class="text-gray-700 uppercase text-[25px] font-semibold mb-4">MATTE BLACK CHEVY C7 CORVETTE STINGRAY ON CUSTOM 21IN FORGIATO QUINTO WHEELS.</h2>
+                <h5 class="text-sm text-gray-900 mb-4">Arear view camera and lane departure warning. This car has 6 airbags fitted for your protection. It has front & rear power windows, central locking and 2nd row split folding seats. Family life is made easy in this 2016 Jaguar XF. This car has Bluetooth connectivity, side curtain airbags, subwoofer, trailer sway control, sports pedals and heads up information display. This car has forward collision alert/warning. This car comes with enough seats for 5. You can relax.</h5>
+                <a href="#" class="flex items-center justify-center text-white w-[14vw] lg:w-[11vw] h-[50px] bg-red-800 text-[11px] font-bold">KIM BRODERS</a>
+            </div>
+        </div>
+
+        <!-- <div class="block xl:flex justify-center items-center bg-left lg:mb-[95vh] xl:mb-20 bg-[#EDF0FA] bg-no-repeat bg-center lg:py-20" style="background-image: url(assets/img/img6.png); object-fit: cover;">
+            <div class="space w-0 xl:w-[40%] h-[50vh] lg:min-h-[85vh]">
+                
+            </div>
+            <div class="w-full xl:w-[38%] lg:px-[10vw] xl:px-0 bg-[#EDF0FA] xl:bg-transparent">
+                <h3 class="text-gray-800 text-[21px] mb-3 font-semibold">Browse Cars By Make</h3>
+                <h5 class="text-red-600 font-semibold text-sm mb-8">We currently have 428,897 cars available</h5>
+                <div class="flex justify-between w-[85%] mb-10">
+                    <ul class="text-[13px]">
+                        <li class="text-gray-700  hover:text-red-600 mb-3 font-semibold" style="transition: 0.5s ease-in-out;"><a href="#">Alfa Romeo <span class="mx-2">(256)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Alpine <span class="mx-2">(157)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Alpine <span class="mx-2">(145)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Aston Martin <span class="mx-2">(456)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Audi <span class="mx-2">(856)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Bently <span class="mx-2">(125)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">BMW <span class="mx-2">(562)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Bugatti <span class="mx-2">(562)</span></a></li>
+                    </ul>
+
+                    <ul class="text-[13px]">
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Ferrari <span class="mx-2">(256)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Fiat <span class="mx-2">(157)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Lamborghini <span class="mx-2">(145)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Lancia <span class="mx-2">(562)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Land Rover <span class="mx-2">(456)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Maserati <span class="mx-2">(856)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">McLaren <span class="mx-2">(125)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Mercedes-Benz<span class="mx-2">(562)</span></a></li>
+                    </ul>
+
+                    <ul class="text-[13px]">
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Mini <span class="mx-2">(256)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Opel <span class="mx-2">(157)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Peugeot <span class="mx-2">(145)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Porsche <span class="mx-2">(562)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Renault <span class="mx-2">(125)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Rolls-Royce <span class="mx-2">(456)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Vauxhall <span class="mx-2">(856)</span></a></li>
+                        <li class="text-gray-700 hover:text-red-600 mb-3 font-semibold" style="transition: 0.3s ease-in-out;"><a href="#">Volkswagen<span class="mx-2">(562)</span></a></li>
+                    </ul>
+
+                </div>
+                <a href="#" class="flex items-center justify-center text-white w-[11vw] h-[50px] bg-red-800 text-[11px] font-bold hover:opacity-90" style="transition: 0.3s ease-in-out;">SEARCH FOR CARS</a>
+            </div>
+        </div> -->
+
+        <div class="">
+            <h1 class="text-gray-700 uppercase text-center font-semibold text-[22px]">Perfect Cars for you </h1>
+            <p class="text-[12px] uppercase text-center mt-2 text-gray-400">IT WILL HELP US FIND THE TOYOTA YOU'RE LOOKING FOR IN YOUR AREA.</p>
+            <div class="px-[6vw]">
+                <table class="mt-5 border border-gray-400 w-full px-20 text-center">
+                    <tr>
+                        <td class="border border-gray-400  text-gray-500 uppercase text-[13px] font-semibold hover:bg-red-800 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#" class="flex h-[8vh] w-[20vw] items-center justify-center focus:bg-red-800 focus:text-white ">New cars</a></td>
+                        <td class="border border-gray-400  text-gray-500 uppercase text-[13px] font-semibold hover:bg-red-800 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#" class="flex h-[8vh] w-[20vw] items-center justify-center focus:bg-red-800 focus:text-white ">Used cars</a></td>
+                        <td class="border border-gray-400  text-gray-500 uppercase text-[13px] font-semibold hover:bg-red-800 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#" class="flex h-[8vh] w-[20vw] items-center justify-center focus:bg-red-800 focus:text-white ">Featured cars</a></td>
+                        <td class="border border-gray-400  text-gray-500 uppercase text-[13px] font-semibold hover:bg-red-800 hover:text-white" style="transition: 0.3s ease-in-out;"><a href="#" class="flex h-[8vh] w-[20vw] items-center justify-center focus:bg-red-800 focus:text-white ">Bikes And Trucks</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="flex flex-col px-[6vw] w-full mt-10">
+                <div class="top grid grid-cols-2 lg:flex lg:flex-row">
+                    <div class="border border-gray-300 lg:w-[21vw] w-[40vw] lg:mr-7">
+                        <img src="assets/img/img7.jpg" alt="car image for sell" class="w-full" style="object-fit: contain;">
+                        <div class="mt-5 px-3">
+                            <a href="#" class="text-[13px] text-gray-400 font-semibold py-10 hover:text-red-600" style="transition: 0.3s ease-in-out;">TIMLERS MOTORS</a>
+                            <a href="#" class="block text-gray-600 font-bold py-2">MAZDA CX-5 SX, V6, ABS, SUNROOF</a>
+                            <div class="flex relative mb-5">
+                                <!-- <span class="text-xl text-red-600 font-semibold">$25,000 </span> 
+                                <p class="absolute bottom-0 xl:right-[15vh] lg:right-[10vh] text-[12px] text-gray-400 font-semibold">MSRP $27,000</p> -->
+                                <span class="text-xl text-red-600 font-semibold">$25,000 </span> 
+                                <p class="mt-3 ml-2  text-[12px] text-gray-400 font-semibold">MSRP $27,000</p>
+                            </div>
+                            <div class="block xl:flex justify-between mb-3">
+                                <div class="input">
+                                <input type="checkbox" class="text-gray-400">
+                                <label for="compare" class="text-[12px] text-gray-400 font-semibold uppercase">Compare</label>
+                                </div>
+                                <div class="view xl:pb-5 lg:pb-1 text-right">
+                                    <a href="#" class="text-[11px] font-bold text-gray-500 uppercase hover:text-red-600" style="transition: 0.3s ease-in-out;">View Detail <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" border border-gray-300 lg:w-[21vw] w-[40vw] lg:mr-7">
+                        <img src="assets/img/img8.jpg" alt="car image for sell" class="w-full" style="object-fit: contain;">
+                        <div class="mt-5 px-3">
+                            <a href="#" class="text-[13px] text-gray-400 font-semibold py-10 hover:text-red-600" style="transition: 0.3s ease-in-out;">TIMLERS MOTORS</a>
+                            <a href="#" class="block text-gray-600 font-bold py-2">MAZDA CX-5 SX, V6, ABS, SUNROOF</a>
+                            <div class="flex relative mb-5">
+                                <span class="text-xl text-red-600 font-semibold">$25,000 </span> 
+                                <p class="mt-3 ml-2  text-[12px] text-gray-400 font-semibold">MSRP $27,000</p>
+                            </div>
+                            <div class="block xl:flex justify-between mb-3">
+                                <div class="input">
+                                <input type="checkbox" class="text-gray-400">
+                                <label for="compare" class="text-[12px] text-gray-400 font-semibold uppercase">Compare</label>
+                                </div>
+                                <div class="view xl:pb-5 lg:pb-1 text-right">
+                                    <a href="#" class="text-[11px] font-bold text-gray-500 uppercase hover:text-red-600" style="transition: 0.3s ease-in-out;">View Detail <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" border border-gray-300 lg:w-[21vw] w-[40vw] lg:mr-7 mt-7 lg:mt-0">
+                        <img src="assets/img/img9.jpg" alt="car image for sell" class="w-full" style="object-fit: contain;">
+                        <div class="mt-5 px-3">
+                            <a href="#" class="text-[13px] text-gray-400 font-semibold py-10 hover:text-red-600" style="transition: 0.3s ease-in-out;">TIMLERS MOTORS</a>
+                            <a href="#" class="block text-gray-600 font-bold py-2">MAZDA CX-5 SX, V6, ABS, SUNROOF</a>
+                            <div class="flex relative mb-5">
+                                <span class="text-xl text-red-600 font-semibold">$25,000 </span> 
+                                <p class="mt-3 ml-2  text-[12px] text-gray-400 font-semibold">MSRP $27,000</p>
+                            </div>
+                            <div class="block xl:flex justify-between mb-3">
+                                <div class="input">
+                                <input type="checkbox" class="text-gray-400">
+                                <label for="compare" class="text-[12px] text-gray-400 font-semibold uppercase">Compare</label>
+                                </div>
+                                <div class="view xl:pb-5 lg:pb-1 text-right">
+                                    <a href="#" class="text-[11px] font-bold text-gray-500 uppercase hover:text-red-600" style="transition: 0.3s ease-in-out;">View Detail <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" border border-gray-300 lg:w-[21vw] w-[40vw] lg:mr-7 lg:mr-7 mt-7 lg:mt-0">
+                        <img src="assets/img/img10.jpg" alt="car image for sell" class="w-full" style="object-fit: contain;">
+                        <div class="mt-5 px-3">
+                            <a href="#" class="text-[13px] text-gray-400 font-semibold py-10 hover:text-red-600" style="transition: 0.3s ease-in-out;">TIMLERS MOTORS</a>
+                            <a href="#" class="block text-gray-600 font-bold py-2">MAZDA CX-5 SX, V6, ABS, SUNROOF</a>
+                            <div class="flex relative mb-5">
+                                <span class="text-xl text-red-600 font-semibold">$25,000 </span> 
+                                <p class="mt-3 ml-2  text-[12px] text-gray-400 font-semibold">MSRP $27,000</p>
+                            </div>
+                            <div class="block xl:flex justify-between mb-3">
+                                <div class="input">
+                                <input type="checkbox" class="text-gray-400">
+                                <label for="compare" class="text-[12px] text-gray-400 font-semibold uppercase">Compare</label>
+                                </div>
+                                <div class="view xl:pb-5 lg:pb-1 text-right">
+                                    <a href="#" class="text-[11px] font-bold text-gray-500 uppercase hover:text-red-600" style="transition: 0.3s ease-in-out;">View Detail <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom lg:pt-7 pb-20 grid grid-cols-2 lg:flex lg:flex-row">
+                    <div class=" border border-gray-300 lg:w-[21vw] w-[40vw] lg:mr-7 mt-7 lg:mt-0">
+                        <img src="assets/img/img11.jpg" alt="car image for sell" class="w-full">
+                        <div class="mt-5 px-3">
+                            <a href="#" class="text-[13px] text-gray-400 font-semibold py-10 hover:text-red-600" style="transition: 0.3s ease-in-out;">TIMLERS MOTORS</a>
+                            <a href="#" class="block text-gray-600 font-bold py-2">MAZDA CX-5 SX, V6, ABS, SUNROOF</a>
+                            <div class="flex relative mb-5">
+                                <span class="text-xl text-red-600 font-semibold">$25,000 </span> 
+                                <p class="mt-3 ml-2  text-[12px] text-gray-400 font-semibold">MSRP $27,000</p>
+                            </div>
+                            <div class="block xl:flex justify-between mb-3">
+                                <div class="input">
+                                <input type="checkbox" class="text-gray-400">
+                                <label for="compare" class="text-[12px] text-gray-400 font-semibold uppercase">Compare</label>
+                                </div>
+                                <div class="view xl:pb-5 lg:pb-1 text-right">
+                                    <a href="#" class="text-[11px] font-bold text-gray-500 uppercase hover:text-red-600" style="transition: 0.3s ease-in-out;">View Detail <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" border border-gray-300 lg:w-[21vw] w-[40vw] lg:mr-7 mt-7 lg:mt-0">
+                        <img src="assets/img/img12.jpg" alt="car image for sell" class="w-full">
+                        <div class="mt-5 px-3">
+                            <a href="#" class="text-[13px] text-gray-400 font-semibold py-10 hover:text-red-600" style="transition: 0.3s ease-in-out;">TIMLERS MOTORS</a>
+                            <a href="#" class="block text-gray-600 font-bold py-2">MAZDA CX-5 SX, V6, ABS, SUNROOF</a>
+                            <div class="flex relative mb-5">
+                                <span class="text-xl text-red-600 font-semibold">$25,000 </span> 
+                                <p class="mt-3 ml-2  text-[12px] text-gray-400 font-semibold">MSRP $27,000</p>
+                            </div>
+                            <div class="block xl:flex justify-between mb-3">
+                                <div class="input">
+                                <input type="checkbox" class="text-gray-400">
+                                <label for="compare" class="text-[12px] text-gray-400 font-semibold uppercase">Compare</label>
+                                </div>
+                                <div class="view xl:pb-5 lg:pb-1 text-right">
+                                    <a href="#" class="text-[11px] font-bold text-gray-500 uppercase hover:text-red-600" style="transition: 0.3s ease-in-out;">View Detail <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" border border-gray-300 lg:w-[21vw] w-[40vw] lg:mr-7 mt-7 lg:mt-0">
+                        <img src="assets/img/img13.jpg" alt="car image for sell" class="w-full">
+                        <div class="mt-5 px-3">
+                            <a href="#" class="text-[13px] text-gray-400 font-semibold py-10 hover:text-red-600" style="transition: 0.3s ease-in-out;">TIMLERS MOTORS</a>
+                            <a href="#" class="block text-gray-600 font-bold py-2">MAZDA CX-5 SX, V6, ABS, SUNROOF</a>
+                            <div class="flex relative mb-5">
+                                <span class="text-xl text-red-600 font-semibold">$25,000 </span> 
+                                <p class="mt-3 ml-2  text-[12px] text-gray-400 font-semibold">MSRP $27,000</p>
+                            </div>
+                            <div class="block xl:flex justify-between mb-3">
+                                <div class="input">
+                                <input type="checkbox" class="text-gray-400">
+                                <label for="compare" class="text-[12px] text-gray-400 font-semibold uppercase">Compare</label>
+                                </div>
+                                <div class="view xl:pb-5 lg:pb-1 text-right">
+                                    <a href="#" class="text-[11px] font-bold text-gray-500 uppercase hover:text-red-600" style="transition: 0.3s ease-in-out;">View Detail <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" border border-gray-300 lg:w-[21vw] w-[40vw] lg:mr-7 mt-7 lg:mt-0">
+                        <img src="assets/img/img14.jpg" alt="car image for sell" class="w-full">
+                        <div class="mt-5 px-3">
+                            <a href="#" class="text-[13px] text-gray-400 font-semibold py-10 hover:text-red-600" style="transition: 0.3s ease-in-out;">TIMLERS MOTORS</a>
+                            <a href="#" class="block text-gray-600 font-bold py-2">MAZDA CX-5 SX, V6, ABS, SUNROOF</a>
+                            <div class="flex relative mb-5">
+                                <span class="text-xl text-red-600 font-semibold">$25,000 </span> 
+                                <p class="mt-3 ml-2  text-[12px] text-gray-400 font-semibold">MSRP $27,000</p>
+                            </div>
+                            <div class="block xl:flex justify-between mb-3">
+                                <div class="input">
+                                <input type="checkbox" class="text-gray-400">
+                                <label for="compare" class="text-[12px] text-gray-400 font-semibold uppercase">Compare</label>
+                                </div>
+                                <div class="view xl:pb-5 lg:pb-1 text-right">
+                                    <a href="#" class="text-[11px] font-bold text-gray-500 uppercase hover:text-red-600" style="transition: 0.3s ease-in-out;">View Detail <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-[#EDF0FA] pt-20 pb-[23vh] px-5 lg:px-[6vw]">
+            <h1 class="text-gray-600 text-[23px] font-semibold">LATEST RELEASED CAR MODELS</h1>
+            <div class="flex justify-end pb-10">
+                <button class="h-[5vh] w-[2.3vw] bg-gray-400 text-white mr-2"><i class="fa-solid fa-less-than text-[13px]"></i></button>
+                <button class="h-[5vh] w-[2.3vw] bg-gray-400 text-white"><i class="fa-solid fa-greater-than text-[13px]"></i></button>
+            </div>
+            <div class=" flex justify-between w-[100%] pt">
+                <div class="card w-[30vw] lg:w-[28.5vw] lg:h-[58vh] h-[45vh] mr-">
+                    <div class="group relative bg-center bg-no-repeat h-[100%] bg-black">
+                        <img src="assets/img/img15.jpg" alt="car for seal" class="w-full h-full group-hover:opacity-60" style="transition: 0.3s ease-in-out; object-fit: cover;">
+                        <h3 class="absolute bottom-6 left-8 group-hover:bottom-12 text-gray-300 text-[23px] font-bold w-[70%] uppercase" style="transition: 0.3s ease-in-out;">All New BMW adaptive Drive Head Up Display</h3>
+                    </div>
+                    <div class="bg-red-800 text-white flex justify-between items-center px-5 h-[11vh]">
+                        <div class="relative flex">
+                            <h3 class="text-[20px] font-semibold pr-10">$20,045</h3>
+                            <p class="absolute left-20 top-2 w-full uppercase text-[12px] font-semibold">Msrp $35,000</p>
+                        </div>
+                        <div class="icon">
+                            <a href="#" class="text-[20px]"><i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card w-[30vw] lg:w-[28.5vw] lg:h-[58vh] h-[45vh] mr-">
+                    <div class="group relative bg-center bg-no-repeat h-[100%] bg-black">
+                        <img src="assets/img/img16.jpg" alt="car for seal" class="w-full h-full group-hover:opacity-60" style="transition: 0.3s ease-in-out; object-fit: cover;">
+                        <h3 class="absolute bottom-6 left-8 group-hover:bottom-12 text-gray-300 text-[23px] font-bold w-[70%] uppercase" style="transition: 0.3s ease-in-out;"> Speed Dual-clutch Featured Special New Release</h3>
+                    </div>
+                    <div class="bg-red-800 text-white flex justify-between items-center px-5 h-[11vh]">
+                        <div class="relative flex">
+                            <h3 class="text-[20px] font-semibold pr-10">$20,045</h3>
+                            <p class="absolute left-20 top-2 w-full uppercase text-[12px] font-semibold">Msrp $35,000</p>
+                        </div>
+                        <div class="icon">
+                            <a href="#" class="text-[20px]"><i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card w-[30vw] lg:w-[28.5vw] lg:h-[58vh] h-[45vh] mr-">
+                    <div class="group relative bg-center bg-no-repeat h-[100%] bg-black">
+                        <img src="assets/img/img17.jpg" alt="car for seal" class="w-full h-full group-hover:opacity-60" style="transition: 0.3s ease-in-out; object-fit: cover;">
+                        <h3 class="absolute bottom-6 left-8 group-hover:bottom-12 text-gray-300 text-[23px] font-bold w-[70%] uppercase" style="transition: 0.3s ease-in-out;"> Avalon Hybrid Built for endless weekend.</h3>
+                    </div>
+                    <div class="bg-red-800 text-white flex justify-between items-center px-5 h-[11vh]">
+                        <div class="relative flex">
+                            <h3 class="text-[20px] font-semibold pr-10">$20,045</h3>
+                            <p class="absolute left-20 top-2 w-full uppercase text-[12px] font-semibold">Msrp $35,000</p>
+                        </div>
+                        <div class="icon">
+                            <a href="#" class="text-[20px]"><i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-20 lg:px-[6vw] px-5">
+            <h1 class="text-gray-600 text-[23px] font-semibold uppercase pb-5">WHAT'S TRENDING IN CAR WORLD</h1>
+            <div class="w-full block lg:flex ">
+                <div class="top flex">
+                    <div class="card h-auto lg:w-[27vw] w-[40vw] pr-6 mr-5">
+                        <img src="assets/img/img18.jpg" alt="" class="w-full pb-5" style="object-fit: cover;">
+                        <h5 class="pb-3 uppercase font-bold text-[11px] text-red-600">Vehicles</h5>
+                        <a href="#" class="uppercase text-[18x] font-semibold text-gray-900">Avalon Hybrid Built For The Endless Weekend.</a>
+                        <p class="pt-3 text-[14px] text-gray-600">Norwegian airline website named Widerøe generated a tremendous amount of buzz and a lot of very happy customers this weekend.</p>
+                        <div class="info pt-5 flex">
+                            <img src="assets/img/img19.jpg" alt="" class="rounded-full h-[7.6vh] w-[3.4vw] mr-5" style="object-fit: cover;">
+                            <div class="text pb-5">
+                                <h3 class="text-[14px] text-gray-800 font-semibold">Anselm Hannemann</h3>
+                                <h3 class="text-[12px] text-gray-500 font-semibold">August 15, 2015</h3>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="card h-auto lg:w-[27vw] w-[40vw] pr-6">
+                        <img src="assets/img/img20.jpg" alt="" class="w-full pb-5" style="object-fit: cover;">
+                        <h5 class="pb-3 uppercase font-bold text-[11px] text-red-600">Vehicles</h5>
+                        <a href="#" class="uppercase text-[18x] font-semibold text-gray-900">Avalon Hybrid Built For The Endless Weekend.</a>
+                        <p class="pt-3 text-[14px] text-gray-600">Norwegian airline website named Widerøe generated a tremendous amount of buzz and a lot of very happy customers this weekend.</p>
+                        <div class="info pt-5 flex">
+                            <img src="assets/img/img21.jpg" alt="" class="rounded-full h-[7.6vh] w-[3.4vw] mr-5" style="object-fit: cover;">
+                            <div class="text pb-5">
+                                <h3 class="text-[14px] text-gray-800 font-semibold">Anselm Hannemann</h3>
+                                <h3 class="text-[12px] text-gray-500 font-semibold">August 15, 2015</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               <div class="bottom">
+                <div class="card h-auto lg:w-[27vw] w-[40vw] pr-6">
+                    <img src="assets/img/img22.jpg" alt="" class="w-full pb-5" style="object-fit: cover;">
+                    <h5 class="pb-3 uppercase font-bold text-[11px] text-red-600">Vehicles</h5>
+                    <a href="#" class="uppercase text-[18x] font-semibold text-gray-900">Avalon Hybrid Built For The Endless Weekend.</a>
+                    <p class="pt-3 text-[14px] text-gray-600">Norwegian airline website named Widerøe generated a tremendous amount of buzz and a lot of very happy customers this weekend.</p>
+                    <div class="info pt-5 flex">
+                        <img src="assets/img/img23.jpg" alt="" class="rounded-full h-[7.6vh] w-[3.4vw] mr-5" style="object-fit: cover;">
+                        <div class="text pb-5">
+                            <h3 class="text-[14px] text-gray-800 font-semibold">Anselm Hannemann</h3>
+                            <h3 class="text-[12px] text-gray-500 font-semibold">August 15, 2015</h3>
+                        </div>
+                    </div>
+                </div>
+               </div>
+            </div>
+
+            <div class="relative mt-[10vh]">
+                <p class="line before:bg-gray-300 after:bg-gray-300"></p>
+                <i class="fa-solid fa-gear text-gray-300 text-center w-full"></i>
+                <p class="line2 before:bg-gray-300 after:bg-gray-300"></p>
+              </div>
+        </div>
+
+        <!-- DIV FOR LARGE SCREEN AND ABOVE STARTS -->
+        <div class="hidden lg:block mt-14 mb-20 px-[6vw]">
+            <h1 class="text-center text-gray-700 text-[21px] font-semibold pb-2">WHY CHOOSE US</h1>
+            <h4 class="text-center text-sm text-gray-800">It will help us find the Toyota you're looking for in your area.</h4>
+            <div class=" pt-8 flex flex-col h-auto w-full">
+                <div class="top flex">
+                    <div class="card pt-5 h-40 w-96 flex">
+                        <div class="img pr-6">
+                            <i class="fa-solid fa-gas-pump text-[45px] text-red-700"></i>
+                        </div>
+                        <div class="text">
+                            <h3 class="text-gray-800 text-[16px] font-semibold pb-2">OIL CHANGES</h3>
+                            <p class="text-[14px] text-gray-800 w-[85%]">Vivamus erat diam, condimentum in aliquet sed, bibendum at quam. Phasellus lacus mauris.</p>
+                        </div>
+                    </div>
+
+                    <div class="card pt-5 h-40 w-96 flex">
+                        <div class="img pr-6">
+                            <i class="fa-solid fa-fan text-[45px] text-red-700"></i>
+                        </div>
+                        <div class="text">
+                            <h3 class="text-gray-800 text-[16px] font-semibold pb-2">AIR CONDITIONING</h3>
+                            <p class="text-[14px] text-gray-800 w-[85%]">Nulla a gravida purus. Fusce at interdum libero, at. Vivamus erat diam, condimentum in bibendum at quam.</p>
+                        </div>
+                    </div>
+
+                    <div class="card pt-5 h-40 w-96 flex">
+                        <div class="img pr-6">
+                            <i class="fa-solid fa-charging-station text-[45px] text-red-600"></i>
+                        </div>
+                        <div class="text">
+                            <h3 class="text-gray-800 text-[16px] font-semibold pb-2">AUTO ELECTRIC</h3>
+                            <p class="text-[14px] text-gray-800 w-[85%]">Etiam et maximus nisi, nec scelerisque neque. Nunc euismod iaculis urna, id eleifend lorem aliquet at.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="down flex">
+                    <div class="card pt-5 h-40 w-96 flex">
+                        <div class="img pr-6">
+                            <i class="fa-solid fa-truck-monster text-[45px] text-red-700"></i>
+                        </div>
+                        <div class="text">
+                            <h3 class="text-gray-800 text-[16px] font-semibold pb-2">BRAKE SERVICE</h3>
+                            <p class="text-[14px] text-gray-800 w-[85%]">Vivamus erat diam, condimentum in aliquet sed, bibendum at quam. Phasellus lacus mauris.</p>
+                        </div>
+                    </div>
+
+                    <div class="card pt-5 h-40 w-96 flex">
+                        <div class="img pr-6">
+                            <i class="fa-solid fa-landmark text-[45px] text-red-700"></i>
+                        </div>
+                        <div class="text">
+                            <h3 class="text-gray-800 text-[16px] font-semibold pb-2">TRANSMISSION</h3>
+                            <p class="text-[14px] text-gray-800 w-[85%]">Nulla a gravida purus. Fusce at interdum libero, at. Vivamus erat diam, condimentum in bibendum at quam.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card pt-5 h-40 w-96 flex">
+                        <div class="img pr-6">
+                            <i class="fa-brands fa-galactic-republic text-[45px] text-red-700"></i>
+                        </div>
+                        <div class="text">
+                            <h3 class="text-gray-800 text-[16px] font-semibold pb-2">TIRE & WHEEL SERVICE</h3>
+                            <p class="text-[14px] text-gray-800 w-[85%]">Etiam et maximus nisi, nec scelerisque neque. Nunc euismod iaculis urna, id eleifend lorem aliquet at.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- DIV FOR LARGE SCREEN AND ABOVE STARTS -->
+
+        <!-- DIV FOR MEDIUM SCREEN AND SMALL SCREEN STARTS-->
+        <div class="lg:hidden block mt-14 mb-20 px-5">
+            <h1 class="text-center text-gray-700 text-[21px] font-semibold pb-2">WHY CHOOSE US</h1>
+            <h4 class="text-center text-sm text-gray-800">It will help us find the Toyota you're looking for in your area.</h4>
+            <div class=" pt-8 h-auto w-full">
+                <div class="top block">
+                   <div class="container1 flex">
+                    <div class="card pt-5 h-40 w-96 flex">
+                        <div class="img pr-6">
+                            <i class="fa-solid fa-gas-pump text-[45px] text-red-700"></i>
+                        </div>
+                        <div class="text">
+                            <h3 class="text-gray-800 text-[16px] font-semibold pb-2">OIL CHANGES</h3>
+                            <p class="text-[14px] text-gray-800 w-[85%]">Vivamus erat diam, condimentum in aliquet sed, bibendum at quam. Phasellus lacus mauris.</p>
+                        </div>
+                    </div>
+
+                    <div class="card pt-5 h-40 w-96 flex">
+                        <div class="img pr-6">
+                            <i class="fa-solid fa-fan text-[45px] text-red-700"></i>
+                        </div>
+                        <div class="text">
+                            <h3 class="text-gray-800 text-[16px] font-semibold pb-2">AIR CONDITIONING</h3>
+                            <p class="text-[14px] text-gray-800 w-[85%]">Nulla a gravida purus. Fusce at interdum libero, at. Vivamus erat diam, condimentum in bibendum at quam.</p>
+                        </div>
+                    </div>
+                   </div>
+
+                    <div class="container2 flex">
+                        <div class="card pt-5 h-40 w-96 flex">
+                            <div class="img pr-6">
+                                <i class="fa-solid fa-charging-station text-[45px] text-red-600"></i>
+                            </div>
+                            <div class="text">
+                                <h3 class="text-gray-800 text-[16px] font-semibold pb-2">AUTO ELECTRIC</h3>
+                                <p class="text-[14px] text-gray-800 w-[85%]">Etiam et maximus nisi, nec scelerisque neque. Nunc euismod iaculis urna, id eleifend lorem aliquet at.</p>
+                            </div>
+                        </div>
+                            
+                            <div class="card pt-5 h-40 w-96 flex">
+                                <div class="img pr-6">
+                                    <i class="fa-solid fa-truck-monster text-[45px] text-red-700"></i>
+                                </div>
+                                <div class="text">
+                                    <h3 class="text-gray-800 text-[16px] font-semibold pb-2">BRAKE SERVICE</h3>
+                                    <p class="text-[14px] text-gray-800 w-[85%]">Vivamus erat diam, condimentum in aliquet sed, bibendum at quam. Phasellus lacus mauris.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                  <div class="container3 flex">
+                    <div class="card pt-5 h-40 w-96 flex">
+                        <div class="img pr-6">
+                            <i class="fa-solid fa-landmark text-[45px] text-red-700"></i>
+                        </div>
+                        <div class="text">
+                            <h3 class="text-gray-800 text-[16px] font-semibold pb-2">TRANSMISSION</h3>
+                            <p class="text-[14px] text-gray-800 w-[85%]">Nulla a gravida purus. Fusce at interdum libero, at. Vivamus erat diam, condimentum in bibendum at quam.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card pt-5 h-40 w-96 flex">
+                        <div class="img pr-6">
+                            <i class="fa-brands fa-galactic-republic text-[45px] text-red-700"></i>
+                        </div>
+                        <div class="text">
+                            <h3 class="text-gray-800 text-[16px] font-semibold pb-2">TIRE & WHEEL SERVICE</h3>
+                            <p class="text-[14px] text-gray-800 w-[85%]">Etiam et maximus nisi, nec scelerisque neque. Nunc euismod iaculis urna, id eleifend lorem aliquet at.</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <!-- DIV FOR MEDIUM SCREEN AND SMALL SCREEN ENDS -->
+
+        <div class="h-auto px-[6vw] pt-14 bg-[#19171a] pb-20">
+            <div class="img w-full">
+                <a href="#" class="w-full flex justify-center items-center">
+                    <img src="assets/img/img24.jpg" alt="" class="" style="object-fit: cover;">
+                </a>
+            </div>
+
+            <div class="links flex w-full pt-12 px-[5vw] lg:px-[0] text-gray-400 text-[12px] flex-wrap">
+                <div class="link1 lg:w-[25%] w-[50%]">
+                    <h1 class="text-white text-[15px] pb-3 font-bold">OUR PARTNERS</h1>
+                    <ul>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Apartments.com</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">CareerBuilder.com</a>
+                        </li>
+                       
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Cars.com</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">HomeFinder.com</a>
+                        </li>
+                         <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Detroit Newspapers in Education</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Michigan.com</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">MovingCompanyReviews.com</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.2s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Find & Save</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="link2 lg:w-[25%] w-[50%]]">
+                    <h1 class="text-white text-[15px] pb-3 font-bold">TOP CATEGORES</h1>
+                    <ul>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">All Toyota Vehicles</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">SUVs</a>
+                        </li>
+                       
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Trucks</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Cars</a>
+                        </li>
+                         <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 012s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>                            
+                            <a href="#">Crossovers</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Hybrids</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Hybrid Cars</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Hybrid SUVs</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Concept Vehicles</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">TRD Pro Series</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="link3 lg:w-[25%] w-[50%] pt-5 lg:pt-0">
+                    <h1 class="text-white text-[15px] pb-3 font-bold">ABOUT US</h1>
+                    <ul>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Shopping Tools</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Trade-In Value</a>
+                        </li>
+                       
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Customize Your Own Toyota</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Search Inventory</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Find a Dealer</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Local Specials</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Request a Quote</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Accessories</a>
+                        </li>
+                        <li class="pb-2 hover:text-red-600 flex items-center group" style="transition: 0.1s ease-in-out;">
+                            <i class="fa-solid fa-greater-than pr-2 text-[9px] hidden group-hover:inline-block"></i>
+                            <a href="#">Find Your Match</a>
+                        </li>
+                    </ul>
+                </div>
+
+                 <div class="link4 lg:w-[25%] w-[50%] pt-5 lg:pt-0">
+                    <h1 class="text-white text-[15px] pb-3 font-bold">SIGN UP FOR TOYOTA UPDATES</h1>
+                    <ul>
+                        <li>
+                            <p class="w-[90%] pb-3">Recently received some brochures from my traders here are some that might be of interest.</p>
+                        </li>
+                        <li>
+                            <form class="flex items-center pb-3">
+                                <input type="text" placeholder="Enter Valid Email Address" class="h-10 w-56 p-3 outline-none text-[13px]">
+                                <button class="w-12 h-10 bg-red-800"><i class="fa-solid fa-paper-plane text-white text-[20px]"></i></button>
+                            </form>
+                        </li>
+                        <li class="flex ">
+                            <a href="#"><i class="fa-brands fa-facebook-f text-white bg-blue-800 w-6 h-7 flex items-center justify-center rounded mr-2"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter text-white bg-blue-500 w-6 h-7 flex items-center justify-center rounded mr-2"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in text-white bg-blue-600 w-6 h-7 flex items-center justify-center rounded mr-2"></i></a>
+                            <a href="#"><i class="fa-brands fa-google-plus-g text-white bg-red-500 w-6 h-7 flex items-center justify-center rounded mr-2"></i></a>
+                            <a href="#"><i class="fa-solid fa-rss text-white bg-yellow-600 w-6 h-7 flex items-center justify-center rounded mr-2"></i></a>
+                            <a href="#"><i class="fa-brands fa-vimeo-v text-white bg-blue-400 w-6 h-7 flex items-center justify-center rounded mr-2"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-[#141215] px-[6vw] pt-10 pb-10 flex-col flex lg:flex-row justify-between items-center h-auto">
+            <h3 class="text-gray-500 text-[13px] font-semibold">Powered by <a href="#" class="text-red-700">AlrakStudio.</a> Built with Surecoders</h3>
+            <div class="contact flex pt-1 lg:pt-0">
+                <i class="fa-solid fa-phone text-[#ffffff] mt-1"></i>
+                <h3 class="text-[#ffffff] text-[16px] ml-2"> +0 (123) 456-789-10</h3>
+                <i class="fa-solid fa-caret-up ml-5 h-6 w-6 bg-red-800 mt-1 flex items-center justify-center rounded-full"></i>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
